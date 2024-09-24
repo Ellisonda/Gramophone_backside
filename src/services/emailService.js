@@ -8,14 +8,13 @@ const transporte = nodemailer.createTransport({
     }
 })
 
-const sendMail = async (mailOptions) => {
+const sendMail = async (to, subject, html) => {
     try {
         const options = {
             from: "avier.3@gmail.com",
-            to: mailOptions.to,
-            subject: mailOptions.subject,
-            html: mailOptions.html
-            //!Cambiar formato por el de kunva
+            to: to,
+            subject: subject,
+            html: html
         }
         await transporte.sendMail(options);
     } catch (error) {

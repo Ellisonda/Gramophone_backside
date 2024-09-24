@@ -1,6 +1,9 @@
 const userModel = require('../models/userModel');
 const bcrypt= require('bcrypt');
 const {generateToken}= require('../utils/generateToken');
+const replaceTemplateEmail = require('../utils/replaceTemplateEmail');
+const { emailSignupTemplate } = require('../utils/template');
+const { sendMail } = require('../services/emailService');
 
 
 const login = async (req,res) => {
@@ -61,6 +64,20 @@ const signUp = async (req,res) => {
         })
 
         await user.save();
+
+        const userTemplate = {
+            name:user.name,
+            username: user.username,
+            my_company: 'Gramophone',
+            company_address: 'Paseo La Farola, 15, Málaga',
+            email: user.email,
+            role: user.role
+        }
+
+        const subject = `Many thanks for the support to our community ${userTemplate.name}`;
+        const html = replaceTemplateEmail(emailSignupTemplate, userTemplate);
+
+        await sendMail(user.email, subject, html);
         res.status(201).json({ status: 'Succeded', user: user})
     } catch (error) {
     res.status(404).json({ status: "Failed", error: error.message });
