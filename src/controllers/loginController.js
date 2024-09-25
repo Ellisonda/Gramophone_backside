@@ -37,7 +37,7 @@ const login = async (req,res) => {
         const token_refresh = generateToken(payload, true);
 
         res.status(200).json({
-            stauts:'Succeded',
+            status:'Succeded',
             user: user, 
             token,
             token_refresh
