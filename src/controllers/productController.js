@@ -37,6 +37,25 @@ const getProductById = async (req,res) => {
     }
 }
 
+//Get product by music style
+
+const getProductMyStyle = async (req, res) => {
+    try {
+        const {musicStyle} = req.params;
+        const product = await productModel.find({ estilo_musica:musicStyle })
+        if(!product.length === 0) {
+            return res.status(200).json({
+                status:'Succeded',
+                message: "There's no festival with that music style"
+            });
+        }
+        res.status(200).json({ status: 'Succeded', product: product})
+    } catch (error) {
+        return res.status(404).json({ status: "Failed", error: error.message });
+        
+    }
+}
+
 
 
 //Add product
@@ -93,4 +112,4 @@ const deleteProduct = async (req,res) => {
     }
 }
 
-module.exports = {getAllProducts, getProductById, addProduct, modifyProduct, deleteProduct}
+module.exports = {getAllProducts, getProductById, getProductMyStyle, addProduct, modifyProduct, deleteProduct}
