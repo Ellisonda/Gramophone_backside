@@ -112,5 +112,7 @@ const addUser = async (req, res) => {
     res.status(404).json({ status: "Failed", error: error.message });
     }
   }
+
+  
   
   module.exports = {getAllUsers, getUserById, addUser, updateUser, deleteUser}

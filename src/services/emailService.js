@@ -22,6 +22,8 @@ const sendMail = async (to, subject, html) => {
     }
 }
 
+
+
 module.exports = {sendMail}
 
 //TODO cambiar mail y hacer uno especifico d aplicacion
