@@ -13,15 +13,15 @@ const emailSignupTemplate = `
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            border: 1px solid #a49ee5;
+            border: 2px solid #F2B00A;
             border-radius: 5px;
             background-color: #ffffff;
         }
         .email-header, .email-footer {
             text-align: center;
             padding: 10px;
-            background-color: #fce5e6;
-            border-bottom: 1px solid #a49ee5;
+            background-color: #FFF9C9;
+            border-bottom: 2px solid #A64B2A;
         }
         .email-header {
             border-top-left-radius: 5px;
@@ -53,7 +53,7 @@ const emailSignupTemplate = `
         </div>
         <div class="email-content">
             <p>Hello {{name}},</p>
-            <p>Welcome to {{my_company}}! We are thrilled to have you join our community.</p>
+            <p>Welcome to {{my_company}}! We are so happy to have you here in our community.</p>
             <p>If you want to start discover music around the world, please verify your email address by clicking the button below:</p>
             <p>In case you did not create this account, you can ignore this email or contact our support team.</p>
             <p>Thank you for choosing us. We will be here for you at anytime.</p>
