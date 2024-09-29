@@ -58,9 +58,7 @@ const signUp = async (req,res) => {
         username: req.body.username,
         email: req.body.email,
         password: password,
-        // role: req.body.role,
-        //! Creo q el role aqui no tiene sentido
-        //TODO pendiente d quitar
+       
         })
 
         await user.save();

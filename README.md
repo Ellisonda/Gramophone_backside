@@ -25,7 +25,7 @@ En este proyecto trabajaremos con los diferentes lenguajes/herramientas: **Vite*
 ### **BACKEND** ->
 
 Se ha creado una base de datos de productos, asi como una de usuarios. Ambas se han desplegado en MongoAtlas (el usuario que use la web necesitará dar permiso a su IP). 
-Cada una de las colecciones dispone de una serie de atributos que complementan la funcionalidad de la web, para de está manera poder realizar un **CRUD** completo en ambos casos. Estas funcionalidades se establecen a través de sus **controllers** y sus **routers**
+Cada una de las colecciones dispone de una serie de atributos que complementan la funcionalidad de la web, para de está manera poder realizar un **CRUD** completo en ambos casos. Estas funcionalidades se establecen a través de sus **controllers** y sus **routers**. Para evitar que usuarios no autorizados entren o modifiquen contenido de la app, se han creado unos middlewares que controlen los tokens y los roles.
 
 Se ha creado una tercera colección con los mails que se obtienene en el componente de **newsletter**, los cuales serán usados para enviar en un feature que se añadirá, en la cual se mantendrá informado de cada nuevo festival, enviando un listado de los mismos en formato pdf.
 
@@ -42,7 +42,7 @@ Las dependencias instaladas en el back son estas:
 - bcrypt (encriptación de password)
 - jsonwebtoken (control de token)
 
-Crearemos un archivo .gitignore que contendrá -> /node_modules y el .env (a futuro)
+Se ha creado un archivo .gitignore que contiene -> /node_modules y el .env (a futuro)
 
 Para arrancar el servicio en el back lo haremos con un:
 
